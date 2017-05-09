@@ -23,7 +23,7 @@ const {Blog} = require('./model');
 
 
 // GET requests to /blog => return 10 restaurants
-router.get('/blog', (req, res) => {
+router.get('/posts', (req, res) => {
   Blog
   .find()
   .exec()
@@ -37,7 +37,7 @@ router.get('/blog', (req, res) => {
 });
 
 // can also request by ID
-router.get('/blog/:id', (req, res) => {
+router.get('/posts/:id', (req, res) => {
   Blog
     // this is a convenience method Mongoose provides for searching
     // by the object _id property
@@ -51,7 +51,7 @@ router.get('/blog/:id', (req, res) => {
 });
 
 // POST reqeust - create new blog entry
-router.post('/blog', (req, res) => {
+router.post('/posts', (req, res) => {
 
   const requiredFields = ['title', 'content', 'author'];
  for (let i=0; i<requiredFields.length; i++) {
@@ -78,7 +78,7 @@ router.post('/blog', (req, res) => {
 });
 
 // PUT request - Edit blog entry
-router.put('/blog/:id', (req, res) => {
+router.put('/posts/:id', (req, res) => {
   // ensure that the id in the request path and the one in request body match
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
    res.status(400).json({
@@ -106,7 +106,7 @@ router.put('/blog/:id', (req, res) => {
 });
 
 //DELETE Request - delete blogs
-router.delete('/blog/:id', (req, res) => {
+router.delete('/posts/:id', (req, res) => {
   Blog
   .findByIdAndRemove(req.params.id)
  .exec()
