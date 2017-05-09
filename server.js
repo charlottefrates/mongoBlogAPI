@@ -45,9 +45,10 @@ app.get('/', (req, res) => {
 
 //router instances
 //router instances act as modular, mini-express apps
-// when requests come into `/blog-post` they get routed to blogPostRouter
-//use this to get access to predefined posts stored in postman localhost:8080/blog
-app.use('/blog', blogPostRouter);
+// when requests come into `/posts` they get routed to blogPostRouter
+//use this to get access to predefined posts stored in postman localhost:8080/posts
+//NOTE: the path designated here should NOT match path used on router!!!!!!
+app.use('/', blogPostRouter);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
