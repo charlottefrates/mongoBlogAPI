@@ -22,12 +22,14 @@ const {Blog} = require('./model');
 
 
 
-// GET requests to /blog => return 10 restaurants
+// GET requests to /posts
 router.get('/posts', (req, res) => {
+
   Blog
   .find()
   .exec()
   .then(posts => {
+       console.log('post working');
     res.json(posts.map(post => post.apiRepr()));
   })
   .catch(err => {

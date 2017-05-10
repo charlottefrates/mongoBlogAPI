@@ -27,6 +27,7 @@ blogSchema.virtual('articleMetadata').get(function() {
 // this is an *instance method* which will be available on all instances
 // of the model. This method will be used to return an object that only
 // exposes *some* of the fields we want from the underlying data
+// collection of the type and their fields.. kinda like a class
 blogSchema.methods.apiRepr = function() {
   return {
     id: this._id,
@@ -37,8 +38,35 @@ blogSchema.methods.apiRepr = function() {
   };
 }
 
+//data model
+// this is how you interact with the db
 // note that all instance methods and virtual properties on our
 // schema must be defined *before* we make the call to `.model`.
 const Blog = mongoose.model('Blog', blogSchema);
+
+/*
+//New blog additions based on schema
+const blog1 = new Blog(  {
+  title: "blog1 title",
+  content: "blog1 content",
+  author: {
+            firstName: "Charlotte",
+            lastName: "Frates"
+          }
+});
+
+
+
+
+const blog2 = new Blog(  {
+  title: "blog2 title",
+  content: "blog2 content",
+  author: {
+            firstName: "Charlotte",
+            lastName: "Frates"
+          }
+});
+
+*/
 
 module.exports = {Blog};
