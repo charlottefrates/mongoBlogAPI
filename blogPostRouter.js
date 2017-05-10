@@ -29,7 +29,7 @@ router.get('/posts', (req, res) => {
   .find()
   .exec()
   .then(posts => {
-    res.json({posts:posts.map((post) => post.apiRepr()));
+    res.json({posts:posts.map((post) => post.apiRepr())});
   })
   .catch(err => {
     console.error(err);
