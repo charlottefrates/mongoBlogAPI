@@ -43,12 +43,14 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+/*
 app.get('/api/blog', (req, res) => {
   // trying to show data at page load
   Blog.find(err, data) =>{
        res.json(data);
  });
 });
+*/
 
 //router instances
 //router instances act as modular, mini-express apps
