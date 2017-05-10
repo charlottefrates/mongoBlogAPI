@@ -29,7 +29,6 @@ router.get('/posts', (req, res) => {
   .find()
   .exec()
   .then(posts => {
-       console.log('post a-ok!');
     res.json(posts.map(post => post.apiRepr()));
   })
   .catch(err => {
