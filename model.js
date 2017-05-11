@@ -46,7 +46,7 @@ const post = mongoose.model('post', blogSchema);
 
 /*
 //New blog additions based on schema
-const blog1 = new Blog(  {
+const blog1 = new post(  {
   title: "blog1 title",
   content: "blog1 content",
   author: {
@@ -58,7 +58,7 @@ const blog1 = new Blog(  {
 
 
 
-const blog2 = new Blog(  {
+const blog2 = new post(  {
   title: "blog2 title",
   content: "blog2 content",
   author: {
