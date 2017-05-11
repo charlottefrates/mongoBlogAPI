@@ -42,6 +42,7 @@ blogSchema.methods.apiRepr = function() {
 // this is how you interact with the db
 // note that all instance methods and virtual properties on our
 // schema must be defined *before* we make the call to `.model`.
+//NOTE: Make sure collection name matches the data model
 const post = mongoose.model('post', blogSchema);
 
 /*
