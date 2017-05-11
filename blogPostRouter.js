@@ -29,7 +29,7 @@ router.get('/posts', (req, res) => {
   .find()
   .exec()
   .then(posts => {
-    console.log(post , "POSTS");
+    console.log(posts , "POSTS");
     res.json({
       posts:posts.map(
         (post) => post.apiRepr())});
