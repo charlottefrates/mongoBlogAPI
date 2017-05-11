@@ -42,7 +42,7 @@ blogSchema.methods.apiRepr = function() {
 // this is how you interact with the db
 // note that all instance methods and virtual properties on our
 // schema must be defined *before* we make the call to `.model`.
-const Blog = mongoose.model('Blog', blogSchema);
+const post = mongoose.model('post', blogSchema);
 
 /*
 //New blog additions based on schema
@@ -69,4 +69,4 @@ const blog2 = new Blog(  {
 
 */
 
-module.exports = {Blog};
+module.exports = {post};

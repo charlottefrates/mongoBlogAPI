@@ -18,7 +18,7 @@ mongoose.Promise = global.Promise;
 const {PORT, DATABASE_URL} = require('./config');
 
 //constant that imports modularized route
-const {Blog} = require('./model');
+const {post} = require('./model');
 
 //constant that imports modularized route
 const blogPostRouter = require('./blogPostRouter');

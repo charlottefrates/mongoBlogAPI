@@ -18,14 +18,14 @@ const jsonParser = bodyParser.json();
 
 //imports blogSchema model from different module
 //interface that captures current state of the application's current Blog Posts
-const {Blog} = require('./model');
+const {post} = require('./model');
 
 
 
 // GET requests to /posts
 router.get('/posts', (req, res) => {
 
-  Blog
+  post
   .find()
   .exec()
   .then(posts => {
@@ -42,7 +42,7 @@ router.get('/posts', (req, res) => {
 
 // can also request by ID
 router.get('/posts/:id', (req, res) => {
-  Blog
+  post
     // this is a convenience method Mongoose provides for searching
     // by the object _id property
     .findById(req.params.id)
@@ -67,7 +67,7 @@ router.post('/posts', (req, res) => {
    }
  }
 
-  Blog
+  post
   .create({
     title: req.body.title,
     content: req.body.content,
@@ -101,7 +101,7 @@ router.put('/posts/:id', (req, res) => {
    }
  });
 
-  Blog
+  post
     // all key/value pairs in toUpdate will be updated -- that's what `$set` does
     .findByIdAndUpdate(req.params.id, {$set: updated}, {new: true})
   .exec()
@@ -111,7 +111,7 @@ router.put('/posts/:id', (req, res) => {
 
 //DELETE Request - delete blogs
 router.delete('/posts/:id', (req, res) => {
-  Blog
+  post
   .findByIdAndRemove(req.params.id)
  .exec()
  .then(() => {
