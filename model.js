@@ -55,10 +55,6 @@ const blog1 = new post(  {
             lastName: "Frates"
           }
 });
-
-
-
-
 const blog2 = new post(  {
   title: "blog2 title",
   content: "blog2 content",
@@ -67,7 +63,6 @@ const blog2 = new post(  {
             lastName: "Frates"
           }
 });
-
 */
 
 module.exports = {post};
